@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Parisienne&display=swap');
+
+body{
+  background-color: rgb(255, 255, 126);
+}
+
+h1 {
+  
+  text-align: center;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
