@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora de Troco</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #resultado {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Troco</h1>
+  <button id="btnCalcular">Calcular Troco</button>
+  <div id="resultado"></div>
+
+  <script>
+    document.getElementById('btnCalcular').addEventListener('click', function() {
+      const produto = prompt('Qual o nome do produto que está sendo comprado?');
+      if (!produto) {
+        alert('Por favor, informe o nome do produto.');
+        return;
+      }
+
+      const precoStr = prompt('Qual o preço do produto? (somente números)');
+      const preco = parseFloat(precoStr.replace(',', '.'));
+      if (isNaN(preco) || preco <= 0) {
+        alert('Preço inválido. Por favor, informe um valor numérico maior que zero.');
+        return;
+      }
+
+      const dinheiroStr = prompt('Quanto em dinheiro o cliente entregou para realizar o pagamento?');
+      const dinheiro = parseFloat(dinheiroStr.replace(',', '.'));
+      if (isNaN(dinheiro) || dinheiro < preco) {
+        alert('Valor entregue inválido. Deve ser um número maior ou igual ao preço do produto.');
+        return;
+      }
+
+      const troco = dinheiro - preco;
+
+
+      function formatarValor(valor) {
+        return valor.toFixed(2).replace('.', ',');
+      }
+
+      const mensagem = `Você comprou ${produto}, que custa R$${formatarValor(preco)}. Deu R$${formatarValor(dinheiro)} em dinheiro e vai receber R$${formatarValor(troco)} de troco! Volte sempre!`;
+
+      document.getElementById('resultado').textContent = mensagem;
+    });
+  </script>
+</body>
+</html>

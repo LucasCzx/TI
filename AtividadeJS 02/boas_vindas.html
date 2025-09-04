@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas Vindas</title>
+    <style>
+        body {
+            background-color: rgb(215, 215, 215);
+            text-align: center;
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+       button {
+            padding: 15px 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #27ae60; /* verde */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1e8449; /* verde mais escuro ao passar o mouse */
+            }
+    </style>
+</head>
+<body>
+    <h1>Atividade de boas-vindas!</h1>
+    <button onclick="boasvindas()">
+        Clique aqui
+    </button>
+
+        <script>
+            function boasvindas() {
+            const nome = prompt('Qual é o seu nome?');
+            if (nome) {
+                alert('Olá, ' + nome + '! Seja bem-vindo(a)!');
+            } else {
+                alert('Por favor, digite seu nome!');
+            }
+            }
+        </script>
+</body>
+</html>
